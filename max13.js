@@ -1,4 +1,5 @@
-load('ch13.js');
+load('search.js');
+load('min13.js');
 
 
 function findMax(arr) {

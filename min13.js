@@ -1,4 +1,4 @@
-load('ch13.js');
+load('search.js');
 
 
 function findMin(arr) {
