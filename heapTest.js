@@ -14,8 +14,8 @@ function dispArr(arr) {
 
 
 var nums = [];
-   for (var i = 0; i < 100; ++i) {
-      nums[i] = Math.floor(Math.random() * 101);
+   for (var i = 0; i < 50; ++i) {
+      nums[i] = Math.floor(Math.random() * 51);
    }
 
 dispArr(nums);
