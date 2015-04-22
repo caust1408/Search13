@@ -18,11 +18,12 @@
      * @param {function} cmp Comparison function.
      */
     function heapify(array, index, heapSize, cmp) {
+	    
       var left = 2 * index + 1;
-      //console.log('This is left ' + left);
+      console.log('This is left ' + left);
 
       var right = 2 * index + 2;
-      //console.log('This is right ' + right);
+      console.log('This is right ' + right);
       var largest = index;
       //console.log('This is largest ' + largest);
       
@@ -39,7 +40,7 @@
         var temp = array[index];
         array[index] = array[largest];
         array[largest] = temp;
-        heapify(array, largest, heapSize, cmp);
+          heapify(array, largest, heapSize, cmp);
         console.log(JSON.stringify(array));
         console.log('Swapped ' + JSON.stringify(temp));
         console.log('\n');
@@ -58,6 +59,7 @@
       for (var i = Math.floor(array.length / 2); i >= 0; i -= 1) {
         heapify(array, i, array.length, cmp);
       }
+      console.log('     The heap ' + JSON.stringify(array));
       return array;
     }
 
