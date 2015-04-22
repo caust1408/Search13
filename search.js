@@ -1,5 +1,5 @@
 function dispArr(arr) {
-	for (var i = 0; i < arr.length; ++i) {
+   for (var i = 0; i < arr.length; ++i) {
 		write(arr[i] + " ");
 		if (i % 10 == 9) {
 			write("\n");
@@ -11,13 +11,19 @@ function dispArr(arr) {
 }
 function insertionsort(arr) {
    var temp, inner;
+   var nums = 0;
    for (var outer = 1; outer <= arr.length-1; ++outer) {
+      print('outer ' + outer);
+      print('inner ' + inner + '\n');
       temp = arr[outer];
       inner = outer;
          while (inner > 0 && (arr[inner-1] >= temp)) {
+            nums++;
+            
             arr[inner] = arr[inner-1];
             --inner;
          }
+         print('      times ' + nums);
       arr[inner] = temp;
    }
 }
