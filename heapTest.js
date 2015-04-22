@@ -17,11 +17,10 @@ var nums = [];
    for (var i = 0; i < 50; ++i) {
       nums[i] = Math.floor(Math.random() * 51);
    }
-
-dispArr(nums);
+var classarr = [40,7,41,13,19,92,51,31];
+dispArr(classarr);
 console.log('\n');
-var sort = require('../javascript-algorithms/src' +
-'/sorting/heapsort').heapSort;
-var sorted = sort(nums);
+var sort = require('./heapsort.js').heapSort;
+var sorted = sort(classarr);
 //console.log(sort(nums)); // [ 0, 1, 2, 4, 5 ]
 dispArr(sorted);
