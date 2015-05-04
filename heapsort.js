@@ -2,7 +2,7 @@
   'use strict';
 
   function comparator(a, b) {
-    return a - b;
+    return b - a;
   }
 
   var heapSort = (function () {
@@ -18,32 +18,43 @@
      * @param {function} cmp Comparison function.
      */
     function heapify(array, index, heapSize, cmp) {
+      
+      //console.log('    Swapped ' + JSON.stringify(array[index]));
 	    
       var left = 2 * index + 1;
-      console.log('This is left ' + left);
+      //console.log('This is left ' + left);
 
       var right = 2 * index + 2;
-      console.log('This is right ' + right);
+      //console.log('This is right ' + right);
       var largest = index;
       //console.log('This is largest ' + largest);
       
 
       if (left < heapSize && cmp(array[left], array[index]) > 0) {
         largest = left;
+        //console.log('left ' + JSON.stringify(array[left]));
       }
 
       if (right < heapSize && cmp(array[right], array[largest]) > 0) {
         largest = right;
+        //console.log('    right ' + JSON.stringify(array[right]));
       }
 
+      //console.log(JSON.stringify(array));
+      //console.log('\n');
       if (largest !== index) {
         var temp = array[index];
+        console.log('Before ' + JSON.stringify(array));
+        console.log('    Swapped ' + JSON.stringify(array[largest]) + ' with ' + JSON.stringify(array[index]));
+        //console.log(JSON.stringify(array));
         array[index] = array[largest];
         array[largest] = temp;
-          heapify(array, largest, heapSize, cmp);
-        console.log(JSON.stringify(array));
-        console.log('Swapped ' + JSON.stringify(temp));
+        console.log('After ' + JSON.stringify(array));
         console.log('\n');
+          heapify(array, largest, heapSize, cmp);
+        //console.log(JSON.stringify(array));
+        //console.log('    Swapped ' + JSON.stringify(temp) + ' with ' + JSON.stringify(array[left]));
+        //console.log('\n');
       }
     }
 
@@ -59,7 +70,7 @@
       for (var i = Math.floor(array.length / 2); i >= 0; i -= 1) {
         heapify(array, i, array.length, cmp);
       }
-      console.log('     The heap ' + JSON.stringify(array));
+      //console.log('     The heap ' + JSON.stringify(array));
       return array;
     }
 
