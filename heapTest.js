@@ -14,13 +14,13 @@ function dispArr(arr) {
 
 
 var nums = [];
-   for (var i = 0; i < 50; ++i) {
+   for (var i = 0; i < 15; ++i) {
       nums[i] = Math.floor(Math.random() * 51);
    }
-var classarr = [40,7,41,13,19,92,51,31];
-dispArr(classarr);
+//var classarr = [40,7,41,13,19,92,51,31,13,12];
+dispArr(nums);
 console.log('\n');
 var sort = require('./heapsort.js').heapSort;
-var sorted = sort(classarr);
+var sorted = sort(nums);
 //console.log(sort(nums)); // [ 0, 1, 2, 4, 5 ]
 dispArr(sorted);
